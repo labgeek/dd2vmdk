@@ -1,0 +1,68 @@
+/* SVN FILE: $Id$*/
+/*
+ * Project Name : dd2vmdk.h
+ * $Author: labgeek13 $
+ * $Date$
+ * $Revision$
+ * $LastChangedBy$
+ * $URL$
+ */
+
+#ifndef DD2VMDK_H_
+#define DD2VMDK_H_
+
+#define PROGRAM_NAME "dd2vmdk"
+#define AUTHOR "JD Durick <jd@vmforensics.org>"
+#define WEBSITE "http://vmforensics.org"
+#define VERSION "0.1.1"
+
+/* Support Large File Use */
+#define _LARGEFILE_SOURCE 1
+#define _LARGEFILE64_SOURCE 1
+#define _FILE_OFFSET_BITS   64
+#define REVISIONDATE "2010-07-05 08:27:47 -0400 (Mon, 05 Jul 2010)"
+#define DEBUG
+
+
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <stdio.h>
+#include <unistd.h>
+#include <string.h>
+#include <stdlib.h>
+#include <errno.h>
+#include <ctype.h>
+#include <inttypes.h>
+#include <errno.h>
+
+/* shamelessy taken from Liveview */
+
+const int validPartitionTypes[] = { 0x00, 0x10, 0x02, 0x03, 0x04, 0x05, 0x06,
+		0x07, 0x08, 0x09, 0x0a, 0x0b, 0x0c, 0x0e, 0x0f, 0x10, 0x11, 0x12, 0x14,
+		0x16, 0x17, 0x18, 0x1b, 0x1c, 0x1e, 0x24, 0x39, 0x3c, 0x40, 0x41, 0x42,
+		0x4d, 0x4e, 0x4f, 0x50, 0x51, 0x52, 0x53, 0x54, 0x55, 0x56, 0x5c, 0x61,
+		0x63, 0x64, 0x65, 0x70, 0x75, 0x80, 0x81, 0x82, 0x83, 0x84, 0x85, 0x86,
+		0x87, 0x88, 0x8e, 0x93, 0x94, 0x9f, 0xa0, 0xa5, 0xa6, 0xa7, 0xa8, 0xa9,
+		0xab, 0xb7, 0xb8, 0xbb, 0xbe, 0xbf, 0xc1, 0xc4, 0xc6, 0xc7, 0xda, 0xdb,
+		0xde, 0xdf, 0xe1, 0xe3, 0xe4, 0xeb, 0xee, 0xef, 0xf0, 0xf1, 0xf4, 0xf2,
+		0xfd, 0xfe, 0xff };
+
+const int BOOTCODESIZE = 446;
+const int MBR = 512;
+
+#define mbr_signature 510
+#define byte_jump_size 16
+
+off_t getfilesize(FILE*fp);
+void usage(char *);
+int getendcylinder(int[]);
+int getsectorspertrack(int);
+int getcylinders(int[]);
+int getheadspertrack(int[]);
+void printvmdkfile(char *, char *, long, int, int, int);
+char* dec2hex(int);
+void end_of_sector_marker(char *);
+int getBootablePartition(char *);
+
+
+#endif /* DD2VMDK_H_ */
