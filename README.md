@@ -21,7 +21,7 @@ dd2vmdk is a *nix-based program that allows you to mount raw disk images (create
  root@redbox:/data/projects/C/dd2vmdk# ./dd2vmdk -h
 
 Program: dd2vmdk v0.1
-Author:  vm0x0d@gmail.com
+Author:  labgeek@gmail.com
 
 Description:  dd2vmdk is a command line tool to convert dd images into vmdk files.
 Usage: ./dd2vmdk -i <path to dd image> -v <output path of vmdk>...
