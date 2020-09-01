@@ -4,7 +4,7 @@
  # File(s):     dd2vmdk
  # Version:	    0.1 beta
  #
- # @author: vm0x0d@gmail.com
+ # @author: labgeek@gmail.com
  #
  # This program is free software; you can redistribute it and/or
  # modify it under the terms of the GNU General Public License
