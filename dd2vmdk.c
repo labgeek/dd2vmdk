@@ -319,8 +319,7 @@ int getBootablePartition(char *buffer) {
 /* simple usage function */
 void usage(char *prog_name) {
 	fprintf(stderr, "\nProgram: dd2vmdk v0.1.1\n");
-	fprintf(stderr, "Author:  JD Durick <jd@vmforensics.org>\n");
-	fprintf(stderr, "Website: http://vmforensics.org\n\n");
+	fprintf(stderr, "Author:  JD Durick <labgeek@gmail.com>\n");
 	fprintf(stderr,
 			"Description:  dd2vmdk is a command line tool to convert dd images into "
 				"vmdk files.\n");
