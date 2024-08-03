@@ -35,7 +35,7 @@ Example Usage:
 
 root@redbox:/data/projects/C/dd2vmdk-0.1.1# ./dd2vmdk -i /data/images/vmpersonal.dd -v output.vmdk|more
 
-Author:   vm0x0d@gmail.com
+Author:   labgeek@gmail.com
 Program:  dd2vmdk
 Website:  http://vmforensics.org
 Version:  0.1.1
